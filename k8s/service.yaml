@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cat-api-service
+spec:
+  selector:
+    app: cat-api
+  type: LoadBalancer
+  ports:
+    - name: cat-api-service
+      port: 8080
+      targetPort: 8080
+      protocol: TCP

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cat-api
+  labels:
+    app: cat-api
+spec:
+  selector:
+    matchLabels:
+      app: cat-api
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "cat-api"
+    spec:
+      containers:
+        - name: cat-api
+          image: "joaosipauba/cat-api:latest"
