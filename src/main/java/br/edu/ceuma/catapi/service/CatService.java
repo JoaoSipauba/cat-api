@@ -12,10 +12,11 @@ import java.util.List;
 public class CatService {
     List<Cat> cats = Arrays.asList(
             new Cat("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC7yROYEc61aSxXiwVuVD3rJzic5VofTn5gw&usqp=CAU", "sphynx"),
-            new Cat("https://www.petlove.com.br/images/breeds/223870/profile/original/perfil-himalaio.jpg?1595617107", "Himalaio"),
-            new Cat("https://www.equilibriototalalimentos.com.br/imagens/info3/524.png", "Bengal")
+            new Cat("https://www.petlove.com.br/images/breeds/223870/profile/original/perfil-himalaio.jpg?1595617107", "himalaio"),
+            new Cat("https://www.equilibriototalalimentos.com.br/imagens/info3/524.png", "bengal")
     );
     public ResponseEntity getCatByName(String name){
+        name = name.toLowerCase();
         for (Cat cat : this.cats){
             if (cat.getName().equals(name)){
                 return new ResponseEntity(cat, HttpStatus.OK);
