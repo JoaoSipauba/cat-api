@@ -1,0 +1,8 @@
+version: "3"
+services:
+  cat-api:
+    container_name: cat-api
+    build:
+      context: .
+    ports:
+      - '8080:8080'
